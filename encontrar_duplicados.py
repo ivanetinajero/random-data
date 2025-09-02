@@ -14,7 +14,7 @@ def encontrar_duplicados(ruta_archivo):
     return duplicados
 
 if __name__ == "__main__":
-    archivo = "data/nombres.txt"
+    archivo = "data/apellidos.txt"
     duplicados = encontrar_duplicados(archivo)
     if duplicados:
         print("Registros duplicados encontrados:")
