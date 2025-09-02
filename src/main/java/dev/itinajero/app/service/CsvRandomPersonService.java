@@ -1,6 +1,6 @@
 package dev.itinajero.app.service;
 
-import dev.itinajero.app.dto.CsvGenerationMetadata;
+import dev.itinajero.app.dto.CsvMetadata;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import java.io.BufferedWriter;
@@ -12,6 +12,8 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 @Service
 public class CsvRandomPersonService {
@@ -21,7 +23,7 @@ public class CsvRandomPersonService {
 
     private final Random random = new Random();
 
-    public CsvGenerationMetadata generarCsvPersonas(Long cantidad) throws IOException {
+    public CsvMetadata generarCsvPersonas(Long cantidad) throws IOException {
         long start = System.currentTimeMillis();
         // Leer datos
         List<String> nombres = leerArchivo("data/nombres.txt");
@@ -35,23 +37,39 @@ public class CsvRandomPersonService {
         String filePath = outputDir + File.separator + fileName;
 
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filePath))) {
-            writer.write("Nombre,Apellido,Email,Edad,Profesion,Salario,Pais");
+            writer.write("Nombre,Apellido,Email,FechaNacimiento,EstadoCivil,Profesion,Salario,Peso,Pais");
             writer.newLine();
             for (long i = 0; i < cantidad; i++) {
                 String nombre = randomDeLista(nombres);
                 String apellido = randomDeLista(apellidos);
                 String profesion = randomDeLista(profesiones);
-                int edad = random.nextInt(43) + 18; // 18-60 años
+                int edad = random.nextInt(43) + 18; // 18-60 años (solo para fechaNacimiento)
                 int salario = generarSalario();
+                double peso = Math.round((50 + random.nextDouble() * 60) * 10.0) / 10.0; // 50.0 - 110.0 kg, 1 decimal
                 String email = generarEmail(nombre, apellido, dominios);
                 String pais = randomDeLista(paises);
-                writer.write(
-                        String.format("%s,%s,%s,%d,%s,%d,%s", nombre, apellido, email, edad, profesion, salario, pais));
+                String estadoCivil = randomEstadoCivil();
+                String fechaNacimiento = calcularFechaNacimiento(edad);
+                writer.write(String.format("%s,%s,%s,%s,%s,%s,%d,%.1f,%s",
+                        nombre, apellido, email, fechaNacimiento, estadoCivil, profesion, salario, peso, pais));
                 writer.newLine();
             }
         }
         long end = System.currentTimeMillis();
-        return new CsvGenerationMetadata(fileName, cantidad, end - start);
+        long tamanoArchivo = new File(filePath).length();
+        return new CsvMetadata(fileName, cantidad, end - start, tamanoArchivo);
+    }
+
+    private String randomEstadoCivil() {
+        String[] estados = {"Soltero(a)", "Casado(a)", "Divorciado(a)", "Viudo(a)"};
+        return estados[random.nextInt(estados.length)];
+    }
+
+    private String calcularFechaNacimiento(int edad) {
+        LocalDate hoy = LocalDate.now();
+        int diasExtra = random.nextInt(365);
+        LocalDate nacimiento = hoy.minusYears(edad).minusDays(diasExtra);
+        return nacimiento.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
     }
 
     private List<String> leerArchivo(String path) throws IOException {
@@ -124,10 +142,11 @@ public class CsvRandomPersonService {
     }
 
     private int generarSalario() {
-        int base = (random.nextInt(50) + 20) * 100; // 2000 - 6900
-        int decenas = (random.nextInt(10)) * 10; // 0, 10, ..., 90
-        return base + decenas;
+        // Salario entre 2000 y 15000, múltiplo de 10
+        int min = 2000;
+        int max = 15000;
+        int steps = (max - min) / 10 + 1;
+        return min + random.nextInt(steps) * 10;
     }
 
-    // ...
 }
