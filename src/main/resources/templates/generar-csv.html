@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Generador de CSV Aleatorio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100">
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="/">Random Data CSV</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/generar-csv">Generar CSV</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-shrink-0" style="padding-top: 70px;">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title mb-3"><i class="bi bi-person-lines-fill me-2"></i>Generar archivo CSV de personas aleatorias</h5>
+            <form id="form-csv">
+              <div class="mb-3">
+                <label for="cantidad" class="form-label"><i class="bi bi-list-ol me-1"></i>Número de registros</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-hash"></i></span>
+                  <input type="number" class="form-control" id="cantidad" name="cantidad" min="1" max="1000000" value="100000" required>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary w-100"><i class="bi bi-file-earmark-plus me-2"></i>Generar CSV</button>
+            </form>
+            <div id="loading" class="text-center mt-3" style="display:none;">
+              <img src="images/ajax-loading.gif" alt="Cargando..." style="width:64px;height:64px;">
+              <div class="mt-2"><i class="bi bi-arrow-repeat me-2"></i>Generando archivo, por favor espera...</div>
+            </div>
+            <div id="resultado" class="mt-4" style="display:none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="footer mt-auto py-3 bg-light border-top">
+  <div class="container text-center">
+    <span class="text-muted">&copy; 2025 Random Data CSV &middot; <a href="/">Inicio</a></span>
+  </div>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+<script src="ajax/generar-csv.js"></script>
+</body>
+</html>
