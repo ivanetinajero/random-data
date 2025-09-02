@@ -16,7 +16,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 @Service
-public class CsvRandomPersonService {
+public class RandomDataService {
 
     @Value("${csv.output.dir}")
     private String outputDir;

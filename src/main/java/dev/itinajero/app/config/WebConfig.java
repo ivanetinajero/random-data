@@ -1,7 +1,6 @@
 package dev.itinajero.app.config;
 
 import java.util.concurrent.TimeUnit;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.CacheControl;
