@@ -1,0 +1,194 @@
+Abogado
+Administrador
+Actor
+Actuario
+Agente de bienes raíces
+Agricultor
+Albañil
+Ambientólogo
+Analista de datos
+Analista financiero
+Antropólogo
+Apicultor
+Arquero
+Arquitecto
+Artesano
+Artista
+Asesor de imagen
+Astrónomo
+Atleta
+Auditor
+Auxiliar administrativo
+Auxiliar de enfermería
+Bailarín
+Banquero
+Barista
+Bibliotecario
+Bioquímico
+Biólogo
+Bombero
+Cajero
+Camarero
+Capitán de barco
+Carpintero
+Chef
+Cirujano
+Coach
+Compositor
+Comunicación social
+Conductor
+Contador
+Corredor de seguros
+Cosmetólogo
+Criminólogo
+Cuidador
+Decorador de interiores
+Dentista
+Dermatólogo
+Desarrollador de software
+Desarrollador web
+Detective
+Diagramador
+Director de cine
+Diseñador de modas
+Diseñador gráfico
+Docente
+Doctor
+Economista
+Editor
+Educador infantil
+Electricista
+Emprendedor
+Enfermero
+Enólogo
+Entrenador personal
+Escultor
+Escritor
+Estadístico
+Esteticista
+Farmacéutico
+Filósofo
+Físico
+Fisioterapeuta
+Florista
+Fotógrafo
+Fumigador
+Ganadero
+Geógrafo
+Geólogo
+Gerente
+Gestor cultural
+Ginecólogo
+Gobernante
+Guía turístico
+Historiador
+Ingeniero agrónomo
+Ingeniero civil
+Ingeniero de alimentos
+Ingeniero de sistemas
+Ingeniero electrónico
+Ingeniero en telecomunicaciones
+Ingeniero industrial
+Ingeniero mecánico
+Ingeniero químico
+Inspector
+Instalador
+Intérprete
+Investigador
+Jardinero
+Jefe de cocina
+Juez
+Jurista
+Laboratorista
+Ladrillero
+Líder comunitario
+Limpieza
+Lingüista
+Locutor
+Logístico
+Maestro
+Maestro de educación física
+Maestro de primaria
+Mago
+Mecánico
+Médico general
+Médico veterinario
+Mensajero
+Mercadólogo
+Meteorólogo
+Minero
+Modelador 3D
+Modelo
+Músico
+Nutricionista
+Obrero
+Odontólogo
+Oftalmólogo
+Operador de maquinaria
+Optometrista
+Organizador de eventos
+Orientador
+Paleontólogo
+Panadero
+Paramédico
+Parapsicólogo
+Pastelero
+Pedagogo
+Pediatra
+Periodista
+Perito
+Pescador
+Pianista
+Piloto
+Plomero
+Poeta
+Policía
+Político
+Preparador físico
+Presentador
+Productor audiovisual
+Productor musical
+Profesor
+Programador
+Promotor cultural
+Psicólogo
+Psiquiatra
+Publicista
+Químico
+Radiólogo
+Recepcionista
+Redactor
+Repartidor
+Reportero
+Repostero
+Representante de ventas
+Restaurador
+Revisor fiscal
+Salvavidas
+Sastre
+Secretario
+Seguridad
+Semiólogo
+Sociólogo
+Soldador
+Sommelier
+Técnico automotriz
+Técnico de laboratorio
+Técnico en computación
+Técnico en refrigeración
+Telefonista
+Terapeuta
+Topógrafo
+Tornero
+Toxicólogo
+Traductor
+Transportista
+Tutor
+Urólogo
+Vendedor
+Vigilante
+Visitador médico
+Webmaster
+Youtuber
+Zapatero
+Zoólogo
